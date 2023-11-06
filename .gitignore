@@ -1,5 +1,4 @@
 .rspec
-config/database.yml
 spec/reports
 spec/internal/public/avatars
 spec/internal/public/assets

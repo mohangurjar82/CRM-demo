@@ -1,0 +1,18 @@
+databases:
+  - name: peramali
+    databaseName: peramali
+    user: peramali
+
+services:
+  - type: web
+    name: peramali
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: peramali
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
