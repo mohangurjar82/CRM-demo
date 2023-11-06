@@ -19,7 +19,7 @@ if defined?(FatFreeCRM::Application)
     config.action_controller.perform_caching = true
 
     # Disable Rails's static asset server (Apache or nginx will already do this)
-    config.public_file_server.enabled = true
+    config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
 
     # Compress JavaScripts and CSS
     config.assets.compress = true
